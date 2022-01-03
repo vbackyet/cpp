@@ -2,15 +2,7 @@
 
 // Zombie* zombieHorde( int N, std::string name );
 
-Zombie* zombieHorde( int N, std::string name )
-{
-	Zombie* zombieHorde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-	{
-		zombieHorde[i] = name;
-	}
-	return(zombieHorde);
-}
+
     // for (int i = 0; i < num; i++) {
     //     // Заполнение массива и вывод значений его элементов
     //     p_darr[i] = i;
@@ -21,9 +13,9 @@ int main()
 {
 	Zombie* first_el;
 	first_el = zombieHorde(3, "Izolda");
-	for (first_el; first_el; first_el++)
+	for (int i = 0; i < 3; i++)
 	{
-		first_el->announce();
+		first_el[i].announce();
 	}
 	// randomChump("Glasha");
 	delete [] first_el;
