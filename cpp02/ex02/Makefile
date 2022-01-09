@@ -1,9 +1,9 @@
 CC=c++
 CFLAGS=-std=c++98 -c -Wall -Werror -Wextra
-SRCS=main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS=main.cpp Fixed.cpp
 OBJ=$(SRCS:.cpp=.o)
 EXEC=fixed 
-HEADERS = Fixed.hpp Point.hpp
+HEADERS = Fixed.hpp
 
 all: $(SRCS) $(EXEC)
 
