@@ -12,8 +12,12 @@ class Fixed
 	private:
 		int fixed_point_value;
 		static const int fb = 8;
+
+		friend std::ostream& operator<< (std::ostream &os, const Fixed &fixed);
 	public:
+		Fixed();
 		Fixed(const int integer);
+		Fixed(const float my_float);
 		~Fixed();
 		Fixed(Fixed const &obj);
 		int getRawBits( void ) const;
