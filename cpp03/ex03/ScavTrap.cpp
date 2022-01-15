@@ -1,12 +1,12 @@
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "Constructor ScavTrap " + name + " called!" << std::endl;
 	this->name = name;
 	this->Hitpoints = 100;
-	this->EnergyPoints = 50;
+	this->EnergyPoints = 50000000;
 	this->AttackDamage = 20;
 }
 

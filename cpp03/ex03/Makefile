@@ -1,5 +1,5 @@
 CC=c++
-CFLAGS=-std=c++98 -c -Wall -Werror -Wextra
+CFLAGS=-std=c++98 -c -Wall -Werror -Wextra -Wshadow -Wno-shadow
 SRCS=ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ=$(SRCS:.cpp=.o)
 EXEC=progr 
