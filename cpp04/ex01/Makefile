@@ -1,6 +1,6 @@
 CC=c++
 CFLAGS= -g -std=c++98 -c -Wall -Werror -Wextra
-SRCS=main.cpp Dog.cpp Cat.cpp Animal.cpp  Brain.cpp
+SRCS=main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
 OBJ=$(SRCS:.cpp=.o)
 EXEC=progr 
 HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp

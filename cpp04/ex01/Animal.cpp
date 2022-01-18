@@ -1,4 +1,6 @@
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 Animal::Animal()
 {
@@ -33,3 +35,11 @@ std::string Animal::getType() const
 {
 	return (this->type);
 }
+
+
+Animal::Animal(Animal const &other)
+{
+	*this = other;
+	std::cout << "Animal was created" << std::endl;
+}
+

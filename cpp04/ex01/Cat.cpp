@@ -15,6 +15,7 @@ Cat::Cat(std::string type)
 
 Cat &Cat::operator=(const Cat &obj)
 {
+	std::cout << "очень deep копирование\n";
 	this->type  = obj.type;
 	return *this;
 }
@@ -29,6 +30,12 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "мяу" << std::endl;
+}
+
+Cat::Cat(Cat const &other)
+{
+	*this = other;
+	std::cout << "Cat was created" << std::endl;
 }
 
 

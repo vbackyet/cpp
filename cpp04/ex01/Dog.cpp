@@ -15,6 +15,7 @@ Dog::Dog(std::string type)
 
 Dog &Dog::operator=(const Dog &obj)
 {
+	std::cout << "очень deep копирование\n";
 	this->type  = obj.type;
 	return *this;
 }
@@ -30,4 +31,11 @@ void Dog::makeSound() const
 {
 	std::cout << "гав" << std::endl;
 }
+
+Dog::Dog(Dog const &other)
+{
+	*this = other;
+	std::cout << "Dog was created" << std::endl;
+}
+
 
