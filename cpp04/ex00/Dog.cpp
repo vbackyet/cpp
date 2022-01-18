@@ -28,3 +28,8 @@ void Dog::makeSound() const
 	std::cout << "гав" << std::endl;
 }
 
+Dog::Dog(Dog const &other)
+{
+	*this = other;
+	std::cout << "Dog was created" << std::endl;
+}

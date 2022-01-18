@@ -29,6 +29,12 @@ void Cat::makeSound() const
 	std::cout << "мяу" << std::endl;
 }
 
+Cat::Cat(Cat const &other)
+{
+	*this = other;
+	std::cout << "Cat was created" << std::endl;
+}
+
 
 
 
