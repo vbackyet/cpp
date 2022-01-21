@@ -2,7 +2,7 @@
 #include "Character.hpp"
 #include <iostream>
 
-
+class ICharacter;
 class AMateria
 {
 	protected:

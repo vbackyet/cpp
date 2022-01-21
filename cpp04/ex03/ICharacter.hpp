@@ -1,6 +1,6 @@
 #pragma once
 #include "Materia.hpp"
-
+class AMateria;
 class ICharacter
 {
 public:
