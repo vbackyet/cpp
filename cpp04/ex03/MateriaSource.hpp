@@ -1,9 +1,19 @@
 #pragma once 
+#include "IMateriaSource.hpp" 
 
-class IMateriaSource
+
+class MateriaSource: public IMateriaSource
 {
+private:
+	AMateria *my_range[4];
 public:
-virtual ~IMateriaSource() {}
-virtual void learnMateria(AMateria*) = 0;
-virtual AMateria* createMateria(std::string const & type) = 0;
+	MateriaSource();
+	virtual ~MateriaSource();
+	MateriaSource(MateriaSource const &other);
+
+	MateriaSource const &operator=(MateriaSource const &other);
+
+	virtual void  learnMateria(AMateria *materia);
+	virtual AMateria *createMateria(std::string const &type);
 };
+
