@@ -29,7 +29,7 @@ MateriaSource const &MateriaSource::operator=(MateriaSource const &other)
 
 void MateriaSource::learnMateria(AMateria *materia)
 {
-	for (int i = 0; i < 4; ++i) {
+	for (int i = 0; i < 4; i++) {
 		if (!this->my_range[i]) 
 		{
 			this->my_range[i] = materia;
@@ -41,7 +41,7 @@ void MateriaSource::learnMateria(AMateria *materia)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	for (int i = 4; i > 0; --i) {
+	for (int i = 3; i >= 0; i--) {
 		if (this->my_range[i] && this->my_range[i]->getType() == type) 
 		{			
 			return this->my_range[i]->clone();

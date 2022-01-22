@@ -17,6 +17,7 @@ AMateria::AMateria(AMateria const &other)
 
 AMateria::~AMateria()
 {
+	return;
 }
 
 AMateria const &AMateria::operator=(AMateria const &other)
