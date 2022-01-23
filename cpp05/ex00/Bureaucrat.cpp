@@ -57,8 +57,9 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj)
 	this->name = obj.name;
 	this->grade = obj.grade;
 
-
-
 	return *this;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &other) {
+	*this = other;
+}
