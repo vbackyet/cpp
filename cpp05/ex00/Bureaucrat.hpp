@@ -8,6 +8,7 @@ class Bureaucrat
 public:
 	Bureaucrat(std::string const name, int grade);
 	~Bureaucrat();
+	Bureaucrat &operator=(Bureaucrat const &obj);
 	std::string const getName() const;
 	int 	getGrade() const;
 	void	incrementGrade();
@@ -20,8 +21,8 @@ public:
 	{
 		const char *what() const throw();
 	};
-private:
-	std::string const name;
+protected:
+	std::string name;
 	unsigned int grade;
 };
 

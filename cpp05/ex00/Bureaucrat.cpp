@@ -52,3 +52,13 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat &bur)
     return os;
 }
 
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj)
+{
+	this->name = obj.name;
+	this->grade = obj.grade;
+
+
+
+	return *this;
+}
+
