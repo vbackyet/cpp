@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 
 #include <iostream>
 
@@ -8,42 +8,50 @@ int main()
 {
     try
     {
-        Bureaucrat bur2("Fiona", 151);
-        std::cout << bur2 << std::endl;
+        Bureaucrat  bur("cat", 130);
+        Form        form("lyalyalya", 151);
+        std::cout << form << std::endl;
+        bur.signForm(form);
+        std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-
-	std::cout << "stage 1" << std::endl;
-
 
     try
     {
-        Bureaucrat bur("Shrek", 1);
-        std::cout << bur << std::endl;
-        bur.incrementGrade();
+        Bureaucrat  bur("cat", 130);
+        Form        form("lyalyalya", 0);
+        bur.signForm(form);
+        std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-    
-    
-	std::cout << "stage 2" << std::endl;
-	
-	
-	try
+
+    try
     {
-        Bureaucrat bur1("Shrekk", 10);
-        std::cout << bur1 << std::endl;
-        bur1.decrementGrade();
-		std::cout << bur1 << std::endl;
+        Bureaucrat  bur("cat", 130);
+        Form        form("lyalyalya", 120);
+        bur.signForm(form);
+        std::cout << form << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-    
+
+    try
+    {
+        Bureaucrat  bur("cat", 130);
+        Form        form("lyalyalya", 140);
+        bur.signForm(form);
+        std::cout << form << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
