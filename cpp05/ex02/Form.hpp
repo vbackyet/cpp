@@ -44,23 +44,24 @@ class Form
 		{
 			const char *what() const throw();
 		};
+		class FormIsNotSignedException: public std::exception
+		{
+			const char *what() const throw();
+		};
 
 		// ортодоксальный класс
 		Form( std::string name = "Form", int grade_req = 150, int grade_exec = 150);
 		Form(Form const &other);
-		~Form();
+		virtual ~Form();
 		// оператор перегрузки =
 		Form &operator=(Form const &other);
 
 		// beSigned function and 
 		void    beSigned(Bureaucrat const &bureaucrat);
-// You will also add a beSigned function that takes a Bureaucrat, and makes the form
-// signed if the bureaucrat’s grade is high enough. Always remember, grade 1 is better than
-// grade 2. If the grade is too low, throw a Form::GradeTooLowException.
-// Also add a signForm function to the Bureaucrat. If the signing is successful, it will
-// print something like "<bureaucrat> signs <form>", otherwise it will print something
-// like "<bureaucrat> cannot sign <form> because <reason>".		
+		virtual void	action() const = 0;
 
+		//execute 
+		void execute(Bureaucrat const & executor) const;
 
 };
 

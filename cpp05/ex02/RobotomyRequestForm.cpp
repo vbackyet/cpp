@@ -20,7 +20,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 
 void RobotomyRequestForm::action() const
 {
-	std::string noises[3] = {"bzzzzzzzz-bzzzzzzzzz", "drrrrrr", "booooom"};
+	std::string noises[3] = {"aaaaa", "bbbbbb", "cccccc"};
 	std::srand(std::time(NULL));
 
 	std::cout << noises[std::rand() % 3] << std::endl;

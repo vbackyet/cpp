@@ -1,57 +1,67 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-
 #include <iostream>
-
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    try
-    {
-        Bureaucrat  bur("cat", 130);
-        Form        form("lyalyalya", 151);
-        std::cout << form << std::endl;
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+	Form *form;
+	Bureaucrat bur("cat", 140);
+	Bureaucrat bur1("dog", 20);
 
-    try
-    {
-        Bureaucrat  bur("cat", 130);
-        Form        form("lyalyalya", 0);
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+	try
+	{
+		form = new ShrubberyCreationForm("one");
+		bur.signForm(*form);
+		bur.executeForm(*form);
+		bur1.executeForm(*form);
 
-    try
-    {
-        Bureaucrat  bur("cat", 130);
-        Form        form("lyalyalya", 120);
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+		delete form;
+	}
 
-    try
-    {
-        Bureaucrat  bur("cat", 130);
-        Form        form("lyalyalya", 140);
-        bur.signForm(form);
-        std::cout << form << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+	std::cout << std::endl;
+
+	try
+	{
+		form = new RobotomyRequestForm("two");
+
+		bur1.executeForm(*form);
+		bur.signForm(*form);
+		bur1.signForm(*form);
+		bur.executeForm(*form);
+		form->execute(bur1);
+
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+		delete form;
+	}
+
+	std::cout << std::endl;
+
+	try
+	{
+		form = new PresidentialPardonForm("three");
+
+		bur1.executeForm(*form);
+		bur.signForm(*form);
+		bur1.signForm(*form);
+		form->execute(bur1);
+		bur1.executeForm(*form);
+
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+		delete form;
+	}
 }
