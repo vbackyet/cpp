@@ -41,31 +41,31 @@ Base *generate() {
 
 void identify(Base* p) {
 	if (dynamic_cast<A *>(p))
-		std::cout << "A" << std::endl;
+		std::cout << "Class A" << std::endl;
 	else if (dynamic_cast<B *>(p))
-		std::cout << "B" << std::endl;
+		std::cout << "Class B" << std::endl;
 	else if (dynamic_cast<C *>(p))
-		std::cout << "C" << std::endl;
-	else
-		std::cout << "Not A, B or C class" << std::endl;
+		std::cout << "Class C" << std::endl;
 }
 
 void identify(Base& p) {
-	try {
+	try 
+	{
 		(void)dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
+		std::cout << "Class A" << std::endl;
 	}
-	catch (bad_cast) {}
-	try {
+	catch (const std::exception& e) {}
+	try 
+	{
 		(void)dynamic_cast<B&>(p);
-		std::cout << "B" << std::endl;
+		std::cout << "Class B" << std::endl;
 	}
-	catch (bad_cast) {}
+	catch (const std::exception& e) {}
 	try {
 		(void)dynamic_cast<C&>(p);
-		std::cout << "C" << std::endl;
+		std::cout << "Class C" << std::endl;
 	}
-	catch (std::bad_cast) {}
+	catch (const std::exception& e) {}
 }
 
 int main() {
